@@ -1,1 +1,1 @@
-include ':app', ':spinner'
+include ':app', ':spinner', ':fragmentlifecycle'
