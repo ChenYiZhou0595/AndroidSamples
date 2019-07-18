@@ -1,1 +1,1 @@
-include ':app', ':spinner', ':fragmentlifecycle'
+include ':app', ':spinner', ':fragmentlifecycle', ':tencentlocation'
