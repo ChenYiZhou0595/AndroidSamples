@@ -1,1 +1,1 @@
-include ':app', ':spinner', ':fragmentlifecycle', ':tencentlocation', ':recyclerview', ':broadcast'
+include ':app', ':spinner', ':fragmentlifecycle', ':tencentlocation', ':recyclerview', ':broadcast', ':filepersistence'
