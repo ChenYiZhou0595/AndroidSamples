@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HttpActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_send_request_with_http_url_connection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Request With HttpURLConnection" />
+
+    <Button
+        android:id="@+id/btn_send_request_with_OkHttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Request With OkHttp" />
+
+    <Button
+        android:id="@+id/btn_xml_pull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="XML Pull" />
+
+    <Button
+        android:id="@+id/btn_xml_sax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="XML SAX" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_response_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+</LinearLayout>
