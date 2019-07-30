@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -20,6 +23,10 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -65,6 +72,9 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_xml_pull:
                 responseXMLPull();
+                break;
+            case R.id.btn_xml_sax:
+                responseXMLSAX();
                 break;
         }
     }
@@ -149,11 +159,11 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
         }).start();
     }
 
-    private void showResponse(final String responce) {
+    private void showResponse(final String response) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                tvResponseText.setText(responce);
+                tvResponseText.setText(response);
             }
         });
     }
@@ -192,6 +202,41 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                 eventType = xmlPullParser.next();
             }
         } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void responseXMLSAX() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient okHttpClient = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url("http://192.168.0.109:88/data.xml")
+                        .build();
+                try {
+                    Response response = okHttpClient.newCall(request).execute();
+                    String responseString = response.body().string();
+                    parseXMLWithSAX(responseString);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    private void parseXMLWithSAX(String xmlString) {
+        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+        try {
+            SAXParser saxParser = saxParserFactory.newSAXParser();
+            XMLReader xmlReader = saxParser.getXMLReader();
+            xmlReader.setContentHandler(new ContentHandler());
+            xmlReader.parse(new InputSource(new StringReader(xmlString)));
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
