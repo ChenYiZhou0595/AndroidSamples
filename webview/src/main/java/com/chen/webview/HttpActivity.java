@@ -8,6 +8,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -23,6 +29,7 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -40,6 +47,8 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnSendRequestWithOkHttp;
     private Button btnXMLPull;
     private Button btnXMLSAX;
+    private Button btnJSONJSONObject;
+    private Button btnJSONGSON;
     private TextView tvResponseText;
 
     @Override
@@ -58,6 +67,12 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
         btnXMLSAX = findViewById(R.id.btn_xml_sax);
         btnXMLSAX.setOnClickListener(this);
 
+        btnJSONJSONObject = findViewById(R.id.btn_json_json_object);
+        btnJSONJSONObject.setOnClickListener(this);
+
+        btnJSONGSON = findViewById(R.id.btn_json_gson);
+        btnJSONGSON.setOnClickListener(this);
+
         tvResponseText = findViewById(R.id.tv_response_text);
     }
 
@@ -75,6 +90,12 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_xml_sax:
                 responseXMLSAX();
+                break;
+            case R.id.btn_json_json_object:
+                responseJSONJSONObject();
+                break;
+            case R.id.btn_json_gson:
+                responseJSONGSON();
                 break;
         }
     }
@@ -240,6 +261,72 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void responseJSONJSONObject() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient okHttpClient = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url("http://10.0.2.2:88/json.json")
+                        .build();
+                try {
+                    Response response = okHttpClient.newCall(request).execute();
+                    String responseString = response.body().string();
+                    parseJSONWithJSONObject(responseString);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    private void parseJSONWithJSONObject(String jsonString) {
+        try {
+            JSONArray array = new JSONArray(jsonString);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                String id = object.getString("id");
+                String name = object.getString("name");
+                String version = object.getString("version");
+                Log.d(TAG, "id is " + id);
+                Log.d(TAG, "name is " + name);
+                Log.d(TAG, "version is " + version);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void responseJSONGSON() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient okHttpClient = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url("http://10.0.2.2:88/json.json")
+                        .build();
+                try {
+                    Response response = okHttpClient.newCall(request).execute();
+                    String responseString = response.body().string();
+                    parseJSONWithGSON(responseString);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    private void parseJSONWithGSON(String jsonString) {
+        Gson gson = new Gson();
+        List<App> list = gson.fromJson(jsonString, new TypeToken<List<App>>() {
+        }.getType());
+        for (App app : list) {
+            Log.d(TAG, "id is " + app.getId());
+            Log.d(TAG, "name is " + app.getName());
+            Log.d(TAG, "version is " + app.getVersion());
         }
     }
 }
