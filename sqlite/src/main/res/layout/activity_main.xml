@@ -3,11 +3,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/btn_create_database"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Database" />
+
+    <Button
+        android:id="@+id/btn_add_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Data"/>
+
+    <Button
+        android:id="@+id/btn_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Data"/>
+
+    <Button
+        android:id="@+id/btn_delete_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Data"/>
+
+    <Button
+        android:id="@+id/btn_query_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Query Data"/>
+
+    <Button
+        android:id="@+id/btn_create_database2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Database2" />
+
+    <Button
+        android:id="@+id/btn_add_data2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Data2"/>
+
+    <Button
+        android:id="@+id/btn_update_data2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Data2"/>
+
+    <Button
+        android:id="@+id/btn_update_data2_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Data2_1"/>
+
+    <Button
+        android:id="@+id/btn_delete_data2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Data2"/>
+
+    <Button
+        android:id="@+id/btn_query_data2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Query Data2"/>
 </LinearLayout>
