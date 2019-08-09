@@ -26,4 +26,9 @@ public class ExampleUnitTest {
         System.out.println(s5);
         System.out.println(s6);
     }
+
+    @Test
+    public void addition_isCorrect2() {
+        System.out.println(StringUtils.isValid("([{{{()}}}]){}{}{{{}}}"));
+    }
 }
