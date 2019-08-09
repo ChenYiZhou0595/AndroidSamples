@@ -1,1 +1,1 @@
-include ':app', ':spinner', ':fragmentlifecycle', ':tencentlocation', ':recyclerview', ':broadcast', ':filepersistence', ':webview', ':service', ':runtimepermission', ':contacts', ':sqlite', ':cameraalbum'
+include ':app', ':spinner', ':fragmentlifecycle', ':tencentlocation', ':recyclerview', ':broadcast', ':filepersistence', ':webview', ':service', ':runtimepermission', ':contacts', ':sqlite', ':cameraalbum', ':coolweather', ':view'
