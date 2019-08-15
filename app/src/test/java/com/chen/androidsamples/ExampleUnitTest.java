@@ -2,7 +2,10 @@ package com.chen.androidsamples;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -30,5 +33,25 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect2() {
         System.out.println(StringUtils.isValid("([{{{()}}}]){}{}{{{}}}"));
+    }
+
+    @Test
+    public void addition_isCorrect3() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("a", "a");
+        System.out.println(map.get("b"));
+    }
+
+    @Test
+    public void addition_isCorrect4() {
+        URL url;
+        try {
+            url = new URL("qwewqe");
+            InputStream in = url.openStream();
+            System.out.println("连接可用");
+        } catch (Exception e) {
+            System.out.println("连接打不开!");
+            url = null;
+        }
     }
 }
