@@ -13,11 +13,13 @@
             <option value="$PROJECT_DIR$/cameraalbum" />
             <option value="$PROJECT_DIR$/contacts" />
             <option value="$PROJECT_DIR$/coolweather" />
+            <option value="$PROJECT_DIR$/eventbus" />
             <option value="$PROJECT_DIR$/filepersistence" />
             <option value="$PROJECT_DIR$/fragmentlifecycle" />
             <option value="$PROJECT_DIR$/greendao" />
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/runtimepermission" />
+            <option value="$PROJECT_DIR$/rxjava" />
             <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/spinner" />
             <option value="$PROJECT_DIR$/sqlite" />
