@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/filepersistence" />
             <option value="$PROJECT_DIR$/fragmentlifecycle" />
             <option value="$PROJECT_DIR$/greendao" />
+            <option value="$PROJECT_DIR$/okhttp" />
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/runtimepermission" />
             <option value="$PROJECT_DIR$/rxjava" />
