@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  用于 xml 布局中 binding 数据的一些变量，类的声明引用  -->
+    <data>
+        <!--    变量声明，使用 variable 需要在代码中初始化和赋值    -->
+        <!--    基础数据类型的使用    -->
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <!--    int 类型可写作 Integer    -->
+        <variable
+            name="age"
+            type="int" />
+
+        <variable
+            name="isStudent"
+            type="Boolean" />
+
+
+    </data>
+</layout>
