@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Notification</string>
+    <string name="service_name">自定义的通知服务</string>
+</resources>

@@ -1,3 +1,4 @@
 include ':app', ':spinner', ':fragmentlifecycle', ':tencentlocation', ':recyclerview', ':broadcast', ':filepersistence', ':webview', ':service', ':runtimepermission', ':contacts', ':sqlite', ':cameraalbum', ':coolweather', ':view', ':greendao', ':eventbus', ':rxjava', ':okhttp'
 include ':viewpage2'
 include ':databinding'
+include ':notification'
