@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     fun commonUse(v: View) {
         // 如果 this 表示不明晰，可以 @ 指定类名，即可明确对象指引
-        //startActivity(Intent(this@MainActivity, CommonUseActivity::class.java))
+        startActivity(Intent(this@MainActivity, CommonUseActivity::class.java))
     }
 
     fun advancedUse(v: View) {

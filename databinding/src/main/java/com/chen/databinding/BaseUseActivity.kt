@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.chen.databinding.databinding.ActivityBaseUseBinding
+import com.chen.databinding.tools.BindHelp
 
 class BaseUseActivity: AppCompatActivity() {
 
@@ -20,6 +21,17 @@ class BaseUseActivity: AppCompatActivity() {
         // Activity 使用 DataBindingUtil.setContentView 关联 xml 布局文件，替代原有的 setContentView 方式。
         // ActivityBaseUseBinding 为 DataBinding 根据 xml 自动生成的类文件
         val binding = DataBindingUtil.setContentView<ActivityBaseUseBinding>(this, R.layout.activity_base_use)
-
+        // 设置在 xml 中声明的变量值
+        binding.age = 11
+        binding.isStudent = true
+        binding.name = "BindName"
+        binding.title = "BD标题"
+        // list map
+        val ages = listOf("20", "18", "19")
+        val map = mapOf(19 to "Lily", 21 to "Jim", 20 to "Aili")
+        binding.ages = ages
+        binding.map = map
+        // 静态点击的 helper
+        binding.helper = BindHelp
     }
 }
