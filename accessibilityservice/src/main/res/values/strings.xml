@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AccessibilityService</string>
+    <string name="my_accessibility_service_title">无障碍的标题</string>
+    <string name="my_accessibility_service_description">无障碍的描述</string>
+
+    <string name="go_accessibility_service">打开无障碍界面</string>
+</resources>

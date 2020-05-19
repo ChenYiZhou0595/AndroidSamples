@@ -11,20 +11,22 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/accessibilityservice" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/architecture" />
             <option value="$PROJECT_DIR$/broadcast" />
             <option value="$PROJECT_DIR$/cameraalbum" />
             <option value="$PROJECT_DIR$/contacts" />
-            <option value="$PROJECT_DIR$/coolweather" />
             <option value="$PROJECT_DIR$/databinding" />
-            <option value="$PROJECT_DIR$/eventbus" />
             <option value="$PROJECT_DIR$/filepersistence" />
             <option value="$PROJECT_DIR$/fragmentlifecycle" />
             <option value="$PROJECT_DIR$/greendao" />
+            <option value="$PROJECT_DIR$/lifecycle" />
             <option value="$PROJECT_DIR$/notification" />
             <option value="$PROJECT_DIR$/okhttp" />
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/runtimepermission" />
+            <option value="$PROJECT_DIR$/rxbinding" />
             <option value="$PROJECT_DIR$/rxjava" />
             <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/spinner" />
